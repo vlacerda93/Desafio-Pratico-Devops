@@ -30,6 +30,7 @@ jobs:
         with:
           node-version: 18
       - run: npm install
+      - run: npm run build
 
   lint:
     name: 3. Lint & Code Quality
