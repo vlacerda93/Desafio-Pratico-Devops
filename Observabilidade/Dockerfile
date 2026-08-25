@@ -1,5 +1,8 @@
 FROM node:18-alpine
 
+# Instala openssl e compatibilidade com glibc para o Prisma funcionar no Alpine
+RUN apk add --no-cache openssl libc6-compat
+
 WORKDIR /app
 
 COPY package*.json ./
