@@ -33,11 +33,13 @@ export const metricsMiddleware = (req: Request, res: Response, next: NextFunctio
     const durationInSeconds = diff[0] + diff[1] / 1e9;
 
     // Get matched route pattern or fallback to path to avoid path parameter cardinality explosion
-    const route = req.route ? req.route.path : (req.baseUrl + (req.path === '/' ? '' : req.path));
+    const route = req.route ? req.route.path : req.baseUrl + (req.path === '/' ? '' : req.path);
     const routeLabel = route || 'unknown';
 
     httpRequestCounter.labels(req.method, routeLabel, res.statusCode.toString()).inc();
-    httpRequestDurationSeconds.labels(req.method, routeLabel, res.statusCode.toString()).observe(durationInSeconds);
+    httpRequestDurationSeconds
+      .labels(req.method, routeLabel, res.statusCode.toString())
+      .observe(durationInSeconds);
   });
 
   next();
