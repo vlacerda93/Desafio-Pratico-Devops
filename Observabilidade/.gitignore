@@ -3,3 +3,10 @@ node_modules
 .env
 
 /generated/prisma
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
