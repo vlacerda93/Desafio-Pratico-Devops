@@ -76,4 +76,4 @@ A cada commit ou pull request realizado nas branches `feat/*`, `develop` e `main
 
 ---
 
-**Desenvolvido por Vinicius Lacerda (vlacerda93) & Equipe.**
+**Desenvolvido por Vinicius Lacerda (vlacerda93) & Team Alê e Carlos.**
